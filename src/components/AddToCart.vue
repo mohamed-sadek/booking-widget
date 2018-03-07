@@ -1,14 +1,16 @@
 <template>
   <div class="add-to-cart">
-   <button type="button">Add to Cart </button>
+   <button type="button" @click="onAddToCartClick">Add to Cart </button>
   </div>
 </template>
 
 <script>
 export default {
   name: "AddToCart",
-  data() {
-    return {};
+  methods: {
+    onAddToCartClick () {
+      console.log('Sending Request With the following Info: ', 'OptionId: ' + this.$store.state.selectedOption, 'Availability: ' + this.$store.state.selectedAvailability);
+    }
   }
 };
 </script>
