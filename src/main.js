@@ -7,18 +7,30 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
 	state: {
 		selectedOptionId: 0,
-		selectedAvailabilityId: 0
+		selectedAvailabilityId: 0,
+		options: [
+			{
+				id: 0,
+				title: 'option 0',
+				availabilities: ['15:00', '16:00']
+			},
+
+			{
+				id: 1,
+				title: 'option 1',
+				availabilities: ['15:00', '16:00']
+			}
+		]
 	},
 
 	mutations: {
-		selectOption(state) {
-			state.selectedOptionId = 0
+		selectOption(state, option) {
+			state.selectedOptionId = option
 		}
 	}
 })
 
 import BookingAssistant from './BookingAssistant'
-//import store from './store'
 
 Vue.config.productionTip = false
 

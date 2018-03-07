@@ -13,11 +13,13 @@ import AvailabilitiesList from './AvailabilitiesList'
 export default {
   name: 'OptionListItem',
   props: ['option'],
+  store: this.$store,
   components: {
     AddToCart,
     AvailabilitiesList
   },
   data () {
+  
     return {}
   }
 }

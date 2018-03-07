@@ -13,9 +13,6 @@ export default {
 	store: this.$store,
 	components: {
 		Availability
-	},
-	data () {
-		return {}
 	}
 }
 </script>

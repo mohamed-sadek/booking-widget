@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <options-list />
+    <options-list v-bind:options="options" />
   </div>
 </template>
 
@@ -10,8 +10,14 @@ import OptionsList from './components/OptionsList'
 
 export default {
   name: 'BookingAssistant',
+  store: this.$store,
   components: {
     OptionsList
+  },
+  computed: {
+    options () {
+      return this.$store.state.options;
+    }
   }
 }
 </script>

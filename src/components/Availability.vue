@@ -1,6 +1,6 @@
 <template>
   <div class="availability">
-	<button type="button" @click="onTimeSelect">{{ availability }}</button>
+	<button type="button" value="1" @click="onTimeSelect($event.target.value)">{{ availability }}</button>
   </div>
 </template>
 
@@ -9,14 +9,11 @@
 export default {
 	name: 'Availability',
 	props: ['availability'],
-	data () {
-		return {
-			selectedTime: null
-		}
-	},
+	store: this.$store,
+
 	methods: {
-		onTimeSelect: (value) => {
-			console.log(this.$store);
+		onTimeSelect (value) {
+			this.$store.commit('selectOption', value);
 		}
 	}
 }
