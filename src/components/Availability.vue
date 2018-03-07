@@ -1,6 +1,6 @@
 <template>
   <div class="availability">
-	<button type="button" value="1" @click="onTimeSelect($event.target.value)">{{ availability }}</button>
+		<button type="button" v-bind:class="{ selected: isSelected }" value="1" @click="onTimeSelect($event.target.value)">{{ availability.start_time }}</button>
   </div>
 </template>
 
@@ -9,11 +9,15 @@
 export default {
 	name: 'Availability',
 	props: ['availability'],
-	store: this.$store,
-
+	data () {
+		return {
+			isSelected: false
+		}
+	},
 	methods: {
-		onTimeSelect (value) {
-			this.$store.commit('selectOption', value);
+		onTimeSelect () {
+			this.isSelected = !this.isSelected;
+			this.$store.commit('selectAvailability', this.availability.start_time);
 		}
 	}
 }
@@ -21,10 +25,14 @@ export default {
 
 <style scoped>
   .availability {
-	margin: 0 0.3rem;
+		margin: 0 0.3rem;
   }
 
   .availability:first-child {
-	margin: 0;
+		margin: 0;
   }
+
+	.selected {
+		background: red;
+	}
 </style>

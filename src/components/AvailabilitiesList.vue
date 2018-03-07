@@ -1,6 +1,6 @@
 <template>
   <div class="availabilities">
-	<Availability v-for="(availability, index) in availabilities" v-bind:key="index" v-bind:availability="availability"/>
+	<Availability v-for="(availabilityItem, index) in availability" v-bind:key="index" v-bind:availability="availabilityItem"/>
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import Availability from './Availability'
 
 export default {
 	name: 'AvailabilitiesList',
-	props: ['availabilities'],
+	props: ['availability'],
 	store: this.$store,
 	components: {
 		Availability

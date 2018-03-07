@@ -1,7 +1,7 @@
 <template>
-  <div class="option">
+  <div class="option" @click="onOptionSelect">
     <p>{{ option.title }}</p>
-    <availabilities-list v-bind:availabilities="option.availabilities"  />
+    <availabilities-list v-bind:availability="option.availability"  />
     <add-to-cart />
   </div>
 </template>
@@ -18,9 +18,11 @@ export default {
     AddToCart,
     AvailabilitiesList
   },
-  data () {
-  
-    return {}
+
+  methods: {
+    onOptionSelect () {
+      this.$store.commit('selectOption', this.option.id);
+    }
   }
 }
 </script>
