@@ -9,14 +9,18 @@
 export default {
 	name: 'Availability',
 	props: ['availability'],
-	data () {
-		return {
-			isSelected: false
+	// data () {
+	// 	return {
+	// 		isSelected: false
+	// 	}
+	// },
+	computed: {
+		isSelected () {
+			return this.$store.state.selectedAvailability === this.availability.start_time;
 		}
 	},
 	methods: {
 		onTimeSelect () {
-			this.isSelected = !this.isSelected;
 			this.$store.commit('selectAvailability', this.availability.start_time);
 		}
 	}
