@@ -9,11 +9,6 @@
 export default {
 	name: 'Availability',
 	props: ['availability'],
-	// data () {
-	// 	return {
-	// 		isSelected: false
-	// 	}
-	// },
 	computed: {
 		isSelected () {
 			return this.$store.state.selectedAvailability === this.availability.start_time;
