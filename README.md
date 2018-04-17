@@ -1,6 +1,6 @@
 # booking-assistant
 
-> Booking Assistant Widget
+> Booking Assistant Widget built with Vue and Vuex
 
 ## Build Setup
 
